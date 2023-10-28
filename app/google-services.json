@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "813202046583",
+    "project_id": "androidstudio2023",
+    "storage_bucket": "androidstudio2023.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:813202046583:android:a97a5318e9869db81e5072",
+        "android_client_info": {
+          "package_name": "com.hugo.firstapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBr-v0cMR8ThiRA8RHcNZDCGpd-50_iyc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
