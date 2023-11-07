@@ -58,15 +58,23 @@ public class Home extends AppCompatActivity {
         TextView profileName = homeView.findViewById(R.id.profileName);
         TextView profileEmail = homeView.findViewById(R.id.profileEmail);
 
-        FirebaseUser fuser = mAuth.getCurrentUser();
 
-        profileName.setText(fuser.getDisplayName());
-        profileEmail.setText(fuser.getEmail());
+
+        try {
+            FirebaseUser fuser = mAuth.getCurrentUser();
+            profileName.setText(fuser.getDisplayName());
+            profileEmail.setText(fuser.getEmail());
+        } catch (Exception e){
+            Toast.makeText(this,
+                    e.getMessage(),
+                    Toast.LENGTH_SHORT).show();
+        }
+
 
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow)
+                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow, R.id.nav_config)
                 .setOpenableLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_home);
