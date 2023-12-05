@@ -1,9 +1,11 @@
 package com.hugo.firstapp;
 
 import android.database.DataSetObserver;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListAdapter;
+import android.widget.TextView;
 
 import androidx.fragment.app.FragmentActivity;
 
@@ -41,7 +43,7 @@ public class LocationAdapter implements ListAdapter {
 
     @Override
     public int getCount() {
-        return 0;
+        return locationArray.size();
     }
 
     @Override
@@ -51,7 +53,7 @@ public class LocationAdapter implements ListAdapter {
 
     @Override
     public long getItemId(int i) {
-        return 0;
+        return i;
     }
 
     @Override
@@ -61,17 +63,27 @@ public class LocationAdapter implements ListAdapter {
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
-        return null;
+        if (view == null){
+            LayoutInflater layoutInflater = LayoutInflater.from(activity);
+            view = layoutInflater.inflate(R.layout.item_location, null);
+
+            TextView txtID = view.findViewById(R.id.item_id);
+
+            txtID.setText(locationArray.get(i).getLocation_ID());
+
+
+        }
+        return view;
     }
 
     @Override
     public int getItemViewType(int i) {
-        return 0;
+        return i;
     }
 
     @Override
     public int getViewTypeCount() {
-        return 0;
+        return locationArray.size();
     }
 
     @Override

@@ -66,8 +66,10 @@ public class ListFragment extends Fragment {
                         locationArray.add(locationSchema);
                     }
 
-                    locationAdapter = new LocationAdapter(getActivity(), locationArray);
-                    listView.setAdapter(locationAdapter);
+                    if (task.getResult().size() > 0){
+                        locationAdapter = new LocationAdapter(getActivity(), locationArray);
+                        listView.setAdapter(locationAdapter);
+                    }
                 } else {
                     Toast.makeText(getContext(), "" +
                             task.getException().getMessage(), Toast.LENGTH_SHORT).show();
